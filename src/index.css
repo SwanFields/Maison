@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=Pridi:wght@200;300;400;500;600&family=Anuphan:wght@200;300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 234 66% 30%;
+    --card: 0 0% 100%;
+    --card-foreground: 234 66% 30%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 234 66% 30%;
+    --primary: 234 66% 30%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 339 71% 94%;
+    --secondary-foreground: 234 66% 30%;
+    --muted: 200 71% 97%;
+    --muted-foreground: 234 22% 46%;
+    --accent: 340 82% 66%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 339 40% 92%;
+    --input: 339 40% 92%;
+    --ring: 340 82% 66%;
+    --chart-1: 340 82% 66%;
+    --chart-2: 210 70% 78%;
+    --chart-3: 234 66% 30%;
+    --chart-4: 339 71% 84%;
+    --chart-5: 200 71% 88%;
+    --radius: 1rem;
+    --font-heading: 'Cormorant Garamond', 'Pridi', ui-serif, Georgia, serif;
+    --font-body: 'Inter', 'Anuphan', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Cormorant Garamond', 'Pridi', ui-serif, Georgia, serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    letter-spacing: 0.01em;
+  }
+
+  ::selection {
+    background: #F7D3E0;
+    color: #1A237E;
+  }
+}
+
+@keyframes marquee-x {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+@keyframes soft-pulse {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.06); }
+}
+
+@keyframes ripple-out {
+  0% { transform: scale(0.4); opacity: 0.5; }
+  70% { opacity: 0.1; }
+  100% { transform: scale(1.65); opacity: 0; }
+}
+
+@keyframes drop-fall {
+  0% { transform: translateY(-12px); opacity: 0; }
+  25% { opacity: 0.7; }
+  100% { transform: translateY(26px); opacity: 0; }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .marquee-track {
+    animation: marquee-x 34s linear infinite;
+  }
+  .animate-float {
+    animation: float-y 7s ease-in-out infinite;
+  }
+  .animate-soft-pulse {
+    animation: soft-pulse 3.4s ease-in-out infinite;
+  }
+  .animate-ripple {
+    animation: ripple-out 8s ease-out infinite;
+  }
+  .animate-drop {
+    animation: drop-fall 5s ease-in infinite;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+}

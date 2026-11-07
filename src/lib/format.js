@@ -1,0 +1,1 @@
+export const formatTHB = (value) => `฿${Number(value).toLocaleString("en-US")}`;
